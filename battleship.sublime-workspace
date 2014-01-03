@@ -1,0 +1,1031 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"number",
+				"number_of_turns"
+			],
+			[
+				"ships",
+				"ships_location"
+			],
+			[
+				"numb",
+				"number_of_turns"
+			],
+			[
+				"ship",
+				"ship_hits"
+			],
+			[
+				"coo",
+				"coordinate_numbers_to_coordinate_string"
+			],
+			[
+				"surr",
+				"surrounding_coordinates"
+			],
+			[
+				"next",
+				"next_shots"
+			],
+			[
+				"shot",
+				"shots_taken"
+			],
+			[
+				"random",
+				"random_coordinates"
+			],
+			[
+				"rando",
+				"random_letter"
+			],
+			[
+				"sma",
+				"smart_shot"
+			],
+			[
+				"enem",
+				"enemy_ships_still_alive"
+			],
+			[
+				"hit",
+				"hit_token"
+			],
+			[
+				"missed",
+				"missed_token"
+			],
+			[
+				"back",
+				"background_color"
+			],
+			[
+				"text",
+				"text_color"
+			],
+			[
+				"tex",
+				"text_color"
+			],
+			[
+				"logo",
+				"logo_color"
+			],
+			[
+				"board",
+				"board_color"
+			],
+			[
+				"change",
+				"change_text_to"
+			],
+			[
+				"displ",
+				"display_my_board"
+			],
+			[
+				"initi",
+				"initialize_game_play"
+			],
+			[
+				"turn",
+				"turns_taken"
+			],
+			[
+				"game",
+				"game_loop"
+			],
+			[
+				"home",
+				"home_ships_still_alive"
+			],
+			[
+				"letter",
+				"letter_to_ship_conversion"
+			],
+			[
+				"perc",
+				"perceived_spot"
+			],
+			[
+				"emp",
+				"empty"
+			],
+			[
+				"empty",
+				"empty_board"
+			],
+			[
+				"fire",
+				"fire_at_enemy"
+			],
+			[
+				"child",
+				"child_2"
+			],
+			[
+				"displa",
+				"display_board"
+			],
+			[
+				"new",
+				"new_bard"
+			],
+			[
+				"disp",
+				"display_board"
+			],
+			[
+				"se",
+				"secret_enemy_board"
+			],
+			[
+				"batt",
+				"battleship"
+			],
+			[
+				"battle",
+				"battleship"
+			],
+			[
+				"bat",
+				"battleship"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"complet",
+				"complete_enemy_board"
+			],
+			[
+				"em",
+				"empty_location"
+			],
+			[
+				"plac",
+				"placement"
+			],
+			[
+				"reve",
+				"reveal_complete_enemy_board"
+			],
+			[
+				"compl",
+				"complete_enemy_board"
+			],
+			[
+				"get",
+				"get_random_dirction"
+			],
+			[
+				"battl",
+				"Battleship"
+			],
+			[
+				"shu",
+				"shuffled"
+			],
+			[
+				"all",
+				"all_track_names"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"firs",
+				"firstProgressFill"
+			],
+			[
+				"currentQ",
+				"currentQuestionNumber"
+			],
+			[
+				"answers",
+				"answersArray"
+			],
+			[
+				"update",
+				"updateSelectionClass"
+			],
+			[
+				"curr",
+				"currentlyNotSelected"
+			],
+			[
+				"cen",
+				"centerX"
+			],
+			[
+				"ceny",
+				"centerY"
+			],
+			[
+				"nu",
+				"numberOfQuestions"
+			],
+			[
+				"end",
+				"endSVG"
+			],
+			[
+				"progr",
+				"progressComplete"
+			],
+			[
+				"render",
+				"renderProgressBarSVG"
+			],
+			[
+				"progre",
+				"progressBarSVG"
+			],
+			[
+				"init",
+				"initialWidth"
+			],
+			[
+				"lef",
+				"leftCR"
+			],
+			[
+				"inner",
+				"innerHTML"
+			],
+			[
+				"backg",
+				"background-image"
+			],
+			[
+				"result",
+				"resultsNoNumber"
+			],
+			[
+				"replace",
+				"replace(/\\d"
+			],
+			[
+				"curren",
+				"currentlySelected"
+			],
+			[
+				"check",
+				"checkbox"
+			],
+			[
+				"not",
+				"notSelected"
+			],
+			[
+				"option",
+				"option-selected"
+			],
+			[
+				"upda",
+				"updateSelectionClass"
+			],
+			[
+				"fla",
+				"flatAnswersArrayNoNumbers"
+			],
+			[
+				"ans",
+				"answersArray"
+			],
+			[
+				"answe",
+				"answersArray"
+			],
+			[
+				"resul",
+				"resultsArray"
+			],
+			[
+				"reusl",
+				"resultsArray"
+			],
+			[
+				"resu",
+				"resultTotals"
+			],
+			[
+				"onClick",
+				"onClickBack"
+			],
+			[
+				"answer",
+				"answerSet"
+			],
+			[
+				"an",
+				"answersArray"
+			],
+			[
+				"cur",
+				"currentlySelected"
+			],
+			[
+				"curre",
+				"currentlySelected"
+			],
+			[
+				"currn",
+				"currentQuestionNumber"
+			],
+			[
+				"current",
+				"currentQuestionNumber"
+			],
+			[
+				"left",
+				"leftoverCheckboxes"
+			],
+			[
+				"fir",
+				"firstAttributeId"
+			],
+			[
+				"letters",
+				"lettersArray"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"last",
+				"lastQuestion"
+			],
+			[
+				"alert",
+				"alert(\"only"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"think",
+				"thinkObject"
+			],
+			[
+				"thin",
+				"thinkObject"
+			],
+			[
+				"show",
+				"showCurrentQuestion"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"html",
+				"html	html"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"student",
+				"studentElected"
+			],
+			[
+				"vote",
+				"voteCount"
+			],
+			[
+				"tru",
+				"truncatable_primes"
+			],
+			[
+				"ab",
+				"abs	CSS - position: absolute;"
+			],
+			[
+				"inl",
+				"inline-table"
+			],
+			[
+				"u",
+				"ul	HTML - Unordered list"
+			],
+			[
+				"inject",
+				"inject(:+)**2"
+			],
+			[
+				"nth",
+				"nth_powers"
+			],
+			[
+				"def",
+				"defi	Define initializer method"
+			],
+			[
+				"visiblity",
+				"visibility"
+			],
+			[
+				"bac",
+				"backgroundColor"
+			],
+			[
+				"incre",
+				"incrementing_powers"
+			],
+			[
+				"distin",
+				"distinct_powers"
+			],
+			[
+				"prime",
+				"primes_under_39"
+			],
+			[
+				"delet",
+				"delete_letters_in_front"
+			],
+			[
+				"longest",
+				"longest_string"
+			],
+			[
+				"dele",
+				"delete_first_letter"
+			],
+			[
+				"cu",
+				"current_pattern"
+			],
+			[
+				"long",
+				"longest_string"
+			],
+			[
+				"large",
+				"largest_float_patterns"
+			],
+			[
+				"number_s",
+				"number_string"
+			],
+			[
+				"code",
+				"codeVerifier"
+			],
+			[
+				"sec",
+				"secretNumber"
+			],
+			[
+				"abun",
+				"abundant_array"
+			],
+			[
+				"Nam",
+				"NameScores"
+			],
+			[
+				"ami",
+				"amicable_two"
+			],
+			[
+				"amicable",
+				"amicable_one"
+			],
+			[
+				"am",
+				"amicable_two"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"flooadd",
+				"Floobits - Add To Workspace"
+			],
+			[
+				"floo",
+				"Floobits - Join Recent Workspace"
+			],
+			[
+				"join",
+				"Floobits - Join Recent Workspace"
+			],
+			[
+				"lea",
+				"Floobits - Leave Workspace"
+			],
+			[
+				"fladd",
+				"Floobits - Add To Workspace"
+			],
+			[
+				"addto",
+				"Floobits - Add To Workspace"
+			],
+			[
+				"fllo",
+				"Floobits - Share Directory (Public)"
+			],
+			[
+				"sy",
+				"Set Syntax: Ruby"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"erb",
+				"Set Syntax: Ruby on Rails"
+			],
+			[
+				"syn",
+				"Set Syntax: Ruby"
+			],
+			[
+				"synt",
+				"Set Syntax: Ruby"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax h",
+				"Set Syntax: HTML"
+			],
+			[
+				"ruby ",
+				"Set Syntax: Ruby"
+			],
+			[
+				"syntru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"synht",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"syn pla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Channel"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 647.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/stevenspiel/DevBootcamp/Phase 0/battleship/battleship.rb",
+		"/Users/stevenspiel/floobits/share/stevenspiel/battleship/.floo",
+		"/Users/stevenspiel/floobits/msgs.floobits.log",
+		"/Users/stevenspiel/Desktop/test.rb",
+		"/Users/stevenspiel/Desktop/untitled.rb",
+		"/Users/stevenspiel/Desktop/test.js",
+		"/Users/stevenspiel/think/style.css",
+		"/Users/stevenspiel/think/think.js",
+		"/Users/stevenspiel/Desktop/tally.js",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/node.sublime-build",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/JavaScript.sublime-settings",
+		"/Users/stevenspiel/Desktop/landing page/style.css",
+		"/Users/stevenspiel/Desktop/landing page/minimal.html",
+		"/Users/stevenspiel/Desktop/landing page/reset.css",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/html.sublime-snippet",
+		"/Users/stevenspiel/Desktop/dev.js",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby.sublime-settings",
+		"/Users/stevenspiel/Desktop/terminal reference/terminal-cheat-sheet.html",
+		"/Users/stevenspiel/Desktop/terminal reference/style.css",
+		"/Users/stevenspiel/Desktop/terminal reference/cssreset.css",
+		"/Users/stevenspiel/Desktop/style.css",
+		"/Users/stevenspiel/Desktop/terminal-cheat-sheet.html",
+		"/Users/stevenspiel/Desktop/Euler.rb",
+		"/Users/stevenspiel/Desktop/navbar/style.css",
+		"/Users/stevenspiel/Desktop/navbar/navbar.html",
+		"/Users/stevenspiel/Desktop/navbar.html",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/JSC.sublime-build",
+		"/Users/stevenspiel/Desktop/js_dom.js",
+		"/Users/stevenspiel/Desktop/js_dom.html",
+		"/Users/stevenspiel/Desktop/Bazar_Wordpress_Theme-2/bazar-updated/custom.css",
+		"/Users/stevenspiel/Desktop/reset-bootstrap.css",
+		"/Users/stevenspiel/Desktop/custom.css",
+		"/Users/stevenspiel/Desktop/Desktop/Desktop/tcountdown.php",
+		"/Users/stevenspiel/Desktop/top banner/banner.php",
+		"/Users/stevenspiel/portfolio/css/grid.css",
+		"/Users/stevenspiel/Desktop/testing.rb",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby/break.sublime-snippet",
+		"/Users/stevenspiel/tests/assessment/spec/spec_helper.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/helpers/users_helper.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/controllers/users_controller.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/spec/requests/user_pages_spec.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/spec/support/uitilities.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/config/environments/test.rb",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby/speed.sublime-snippet",
+		"/Users/stevenspiel/Desktop/benchmark.rb",
+		"/Users/stevenspiel/Desktop/assessment.rb",
+		"/Users/stevenspiel/Desktop/Pizza/style.css",
+		"/Users/stevenspiel/Desktop/Pizza/index.html",
+		"/Users/stevenspiel/Desktop/Pizza/functions.rb",
+		"/Users/stevenspiel/websitewaters-island01-stage04-code/index.html",
+		"/Users/stevenspiel/Desktop/person.rb",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby/let",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby/it.sublime-snippet",
+		"/Users/stevenspiel/Desktop/class RPNCalculator 2.rb",
+		"/Users/stevenspiel/think/question_data.js",
+		"/Users/stevenspiel/think/think.html",
+		"/Users/stevenspiel/Desktop/Car/car.rb",
+		"/Users/stevenspiel/Downloads/congress_poll_results.db",
+		"/Users/stevenspiel/rails_projects/sample_app/db/migrate/20131119213233_add_index_to_users_email.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/db/migrate/20131119195424_create_users.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/spec/models/user_spec.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/db/test.sqlite3",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/users/new.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/static_pages/home.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/spec/requests/static_pages_spec.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/layouts/_footer.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/layouts/application.html.erb",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby/match.sublime-snippet",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/layouts/_header.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/layouts/_shim.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/assets/stylesheets/application.css",
+		"/Users/stevenspiel/rails_projects/sample_app/config/application.rb",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Ruby/html ruby call.sublime-snippet",
+		"/Users/stevenspiel/rails_projects/sample_app/app/helpers/application_helper.rb",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/HTML (Rails).sublime-settings",
+		"/Users/stevenspiel/rails_projects/sample_app/example_user.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/config/routes.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/.gitignore",
+		"/Users/stevenspiel/rails_projects/sample_app/app/controllers/static_pages_controller.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/spec/spec_helper.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/.rspec",
+		"/Users/stevenspiel/rails_projects/sample_app/Guardfile",
+		"/Users/stevenspiel/rails_projects/sample_app/config/initializers/secret_token.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/README.rdoc",
+		"/Users/stevenspiel/Desktop/class RPNCalculator.rb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/static_pages/contact.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/static_pages/about.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/app/views/static_pages/help.html.erb",
+		"/Users/stevenspiel/rails_projects/sample_app/Gemfile",
+		"/Users/stevenspiel/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/stevenspiel/rails_projects/sample_app/gitignore",
+		"/Users/stevenspiel/rails_projects/demo_app/db/schema.rb",
+		"/Users/stevenspiel/rails_projects/demo_app/Gemfile",
+		"/Users/stevenspiel/rails_projects/demo_app/.gitignore",
+		"/Users/stevenspiel/app/controllers/users_controller.rb",
+		"/Users/stevenspiel/rails_projects/first_app/Gemfile",
+		"/Users/stevenspiel/rails_projects/first_app/README.md",
+		"/Users/stevenspiel/README.md"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"$debug == false",
+			"debug",
+			"next_shots",
+			"$debug == true",
+			"$debug == false",
+			"debug",
+			"$debug == true",
+			"turns_taken",
+			"$turns_taken = 0",
+			"enemy_ships_still_alive",
+			"determine_ships_sunk",
+			"add_smart_shots_to_next_shots_array",
+			"ship_hits",
+			"(column.to_s)",
+			"surrounding_coordinates",
+			"+",
+			"letters",
+			"remove_from_ships_location_array",
+			"row",
+			"ow+",
+			"[",
+			"]",
+			"column",
+			"$home.board",
+			"random_c",
+			"\"",
+			"take_shot",
+			"sleep",
+			"false",
+			"sleep",
+			"enemy",
+			"sleep",
+			"shots_taken",
+			"display_turns_left_and_ships_hit",
+			"sleep",
+			"display_results",
+			"analyze_and_print_results",
+			"display_results",
+			"at_least_one_ship_sunk",
+			"full_ship_names",
+			"ship_color",
+			"$ship_color",
+			"number of",
+			"\\n",
+			"$ship_letters",
+			"game_over",
+			"=>",
+			"letter_to_ship_conversion",
+			"remaining_ships",
+			"\"X\"",
+			"token",
+			" == ",
+			"$success_color + \"/\" + $text_color",
+			",",
+			"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n",
+			"text_co",
+			"\\e",
+			"\"\\e[32m",
+			"\"\\e[32m/",
+			"\"\\e[32m",
+			"\\e[132m/",
+			"\\e[31m",
+			"GamePlay",
+			"\"\\e[31m\"",
+			"\"\\e[40m\"",
+			"\\e[37m",
+			"\"\\e[37m\"",
+			"\\e[36m",
+			"board_color",
+			"$board_color",
+			"\\e[36m",
+			"\"\\e[36m\"",
+			"\\e[36m",
+			"\"\\e[36m\"",
+			"\\e[36m",
+			"34m",
+			"prompt_return",
+			"it's your",
+			"fire_at_enemy",
+			"carrier",
+			"random_shot",
+			"show",
+			"start",
+			"intro_logo",
+			"get_random_number",
+			"display",
+			"game_over",
+			"Battlship",
+			"!!!",
+			"board",
+			"remove_from_ships_location_array",
+			"\\",
+			"\"",
+			"\\",
+			"||",
+			"ships = ",
+			"sink_ship",
+			"take_shot",
+			"analyze_and_print_results",
+			"letter_to_ship_conversion",
+			"$ship_letters",
+			"puts \"\\e[H\\e[2J\" #clear screen",
+			"\n    ",
+			"analyze_and_print_results",
+			"display_results",
+			"continue",
+			"Hit enter to continue",
+			"take_shot",
+			"analyze_and_print_results",
+			"any key to",
+			"puts intro_logo",
+			"puts \"\\e[H\\e[2J\" #clear screen\n  puts intro_welcome\n  sleep (1.0)",
+			"  sleep(1.0)\n",
+			"  puts \"\\e[H\\e[2J\" #clear screen\n",
+			"\\",
+			"\"",
+			"\\n",
+			"remaining_ships",
+			"display(",
+			"@perceived_board",
+			"    # puts \"(Type 'options' at any time to view available commands)\"\n",
+			"$ships",
+			"symbol",
+			":submarine",
+			":destroyer",
+			":cruiser",
+			":battleship",
+			"aircraft_carrier"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "battleship.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"stati",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"",
+				"~/rails_projects/sample_app/.gitignore"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 170.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}

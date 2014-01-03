@@ -3,54 +3,64 @@
 # make smart shooting from the computer
 # Allow for lower-case input (eg. "j5")
 
+# Global Variables
 $debug = false
+$board_color = "\e[37m"
+$text_color = "\e[37m"
+$background_color = "\e[40m"
+$alert_color = "\e[31m"
+$success_color = "\e[32m"
+$logo_color = "\e[36m"
+$ship_color = "\e[33m"
 
 class NewBoard
-  attr_accessor :board, :perceived_board, :ships_location, :remaining_ships, :shots_taken, :next_shots, :ship_hits
-  attr_reader :empty
+  attr_accessor :board, :perceived_board, :ships_location, :remaining_ships, :shots_taken, :next_shots, :ship_hits, :turns
+  attr_reader :empty, :hit_token, :missed_token, :letters_and_ships
 
   def initialize
     @empty = "."
-    @board =  [[''] + (1..10).to_a] + 
-              [['A'] + Array.new(10,@empty)] + 
-              [['B'] + Array.new(10,@empty)] + 
-              [['C'] + Array.new(10,@empty)] + 
-              [['D'] + Array.new(10,@empty)] + 
-              [['E'] + Array.new(10,@empty)] + 
-              [['F'] + Array.new(10,@empty)] + 
-              [['G'] + Array.new(10,@empty)] + 
-              [['H'] + Array.new(10,@empty)] + 
-              [['I'] + Array.new(10,@empty)] + 
-              [['J'] + Array.new(10,@empty)]
-    @perceived_board = [[''] + (1..10).to_a] + 
-              [['A'] + Array.new(10,@empty)] + 
-              [['B'] + Array.new(10,@empty)] + 
-              [['C'] + Array.new(10,@empty)] + 
-              [['D'] + Array.new(10,@empty)] + 
-              [['E'] + Array.new(10,@empty)] + 
-              [['F'] + Array.new(10,@empty)] + 
-              [['G'] + Array.new(10,@empty)] + 
-              [['H'] + Array.new(10,@empty)] + 
-              [['I'] + Array.new(10,@empty)] + 
-              [['J'] + Array.new(10,@empty)]
+    @board = create_new_board
+    @perceived_board = create_new_board
     @ships_location = { }
     @shots_taken = []
     @next_shots = []
     @ship_hits = []
+    @hit_token = $alert_color + "X" + $text_color
+    @missed_token = $success_color + "/" + $text_color
+    @letters_and_ships = {"A"=>"Aircraft Carrier","B"=>"Battleship","C"=>"Cruiser","D"=>"Destroyer","S"=>"Submarine"}
+    @turns = 0
+  end
+
+  def create_new_board
+    [[''] + (1..10).to_a] + 
+    [['A'] + Array.new(10,@empty)] + 
+    [['B'] + Array.new(10,@empty)] + 
+    [['C'] + Array.new(10,@empty)] + 
+    [['D'] + Array.new(10,@empty)] + 
+    [['E'] + Array.new(10,@empty)] + 
+    [['F'] + Array.new(10,@empty)] + 
+    [['G'] + Array.new(10,@empty)] + 
+    [['H'] + Array.new(10,@empty)] + 
+    [['I'] + Array.new(10,@empty)] + 
+    [['J'] + Array.new(10,@empty)]
+  end
+
+  def ship_color(letter)
+    $ship_color + letter + $board_color
   end
 
   def display(board)
     puts $board_color
     board.each{|x| print "#{x.join("\t")} \n" }
     puts $text_color
-    puts @ships_location if $debug == true
+    puts @ships_location if $debug
   end
 
-  def get_random_location
-    [(1..10).to_a.sample,(1..10).to_a.sample]
+  def random_location
+    [random_number,random_number]
   end
 
-  def get_random_dirction
+  def random_dirction
     [:vertical, :horizontal].sample
   end
 
@@ -64,7 +74,7 @@ class NewBoard
 
   def place_and_map(ship,board=@board)
     @ships_location[ship] = []
-    symbol = $ship_color + ship[0] + $board_color
+    symbol = ship[0]
     case ship 
     when "Aircraft Carrier"
       size = 5
@@ -77,10 +87,10 @@ class NewBoard
     when "Submarine" || "Submarine 2"
       size = 1    
     end
-    placement = get_random_location
+    placement = random_location
     row = placement[0]
     column = placement[1]
-    direction = get_random_dirction
+    direction = random_dirction
     if direction == :vertical && empty_location?(row,column,direction,size)
       size.times do 
         board[row+=1][column]=symbol
@@ -97,12 +107,9 @@ class NewBoard
   end
 
   def populate
-    place_and_map("Aircraft Carrier")
-    place_and_map("Battleship")
-    place_and_map("Cruiser")
-    place_and_map("Destroyer")
-    place_and_map("Submarine")
-    # If this changes, make sure to change the $full_ship_names
+    $home.letters_and_ships.values.each do |ship|
+      place_and_map(ship)
+    end
   end
 
 end
@@ -110,7 +117,6 @@ end
 class EnemyBoard < NewBoard
   def initialize
     super
-    #@perceived_board = @board.dup #I don't understand why this doesn't work??!!
   end
 
   def display_secret_board
@@ -123,7 +129,7 @@ class EnemyBoard < NewBoard
     puts ''
     puts $alert_color + "Enemy Board----------------------------------------------" + $text_color
     display(@perceived_board)
-    puts $hit_token + " = Hit  " + $missed_token +" = Miss"
+    puts $enemy.hit_token + " = Hit  " + $enemy.missed_token + " = Miss"
     puts ''
   end
 
@@ -145,25 +151,10 @@ class HomeBoard < NewBoard
 end
 
 
-# Set up the variables
-$letters_as_numbers = [""] + ("A".."J").to_a
-$board_color = "\e[37m"
-$text_color = "\e[37m"
-$background_color = "\e[40m"
-$alert_color = "\e[31m"
-$success_color = "\e[32m"
-$logo_color = "\e[36m"
-$ship_color = "\e[33m"
-$hit_token = $alert_color + "X" + $text_color
-$missed_token = $success_color + "/" + $text_color
-$letters_and_ships = {($ship_color+"A"+$board_color)=>"Aircraft Carrier",($ship_color+"B"+$board_color)=>"Battleship",($ship_color+"C"+$board_color)=>"Cruiser",($ship_color+"D"+$board_color)=>"Destroyer",($ship_color+"S"+$board_color)=>"Submarine"}
-$full_ship_names = ["Aircraft Carrier","Battleship","Cruiser","Destroyer","Submarine"]
-
 
 # Initialize GamePlay
 
 def intro_pictures
-  $ready = false # a local variable raises an error??!!
   intro_welcome = $logo_color + "
       '|| '||'  '|' '||''''|  '||'        ..|'''.|  ..|''||   '||    ||' '||''''|  
        '|. '|.  .'   ||  .     ||       .|'     '  .|'    ||   |||  |||   ||  .    
@@ -244,7 +235,7 @@ def intro_pictures
 end
 
 def initialize_game_play
-  random_number = get_random_number
+  board = NewBoard.new
   random_number.times do
     $home = HomeBoard.new
     $home.populate
@@ -256,8 +247,8 @@ end
 
 # Logistics
 
-def get_random_number
-  Random.new.rand(1..10)
+def random_number
+  rand(10) + 1
 end
 
 def prompt_return(special="")
@@ -282,7 +273,7 @@ end
 
 def play_game
   change_color_scheme
-  intro_pictures if $debug == false
+  intro_pictures if !$debug
   initialize_game_play
   intro_to_home_board
   intro_to_enemy_board
@@ -307,7 +298,6 @@ def intro_to_home_board
 end
 
 def intro_to_enemy_board
-  $ready = true
   clear_screen
   puts "Let's begin!"
   puts "Here's what you can see of your enemy's board:"
@@ -318,7 +308,7 @@ end
 # Game Loop
 
 def game_loop
-  $turns_taken = 0
+  $board.turns = 0
   fire_at_enemy
   has_more_turns($enemy)
   puts ''
@@ -327,7 +317,7 @@ def game_loop
   prompt_return
   clear_screen
   $home.display_my_board
-  $turns_taken = 0
+  $board.turns = 0
   enemy_fires_back
   has_more_turns($home)
   prompt_return(:start_new_round)
@@ -336,7 +326,7 @@ end
 
 def has_more_turns(board)
   enemy_ships_still_alive = $enemy.ships_location.size - 1
-  if enemy_ships_still_alive > $turns_taken
+  if enemy_ships_still_alive > $board.turns
     puts ''
     if board == $enemy
       fire_at_enemy
@@ -344,7 +334,7 @@ def has_more_turns(board)
       puts "The Computer goes again..."
       enemy_fires_back
     end
-    $turns_taken += 1
+    $board.turns += 1
     has_more_turns(board)
   end
 end
@@ -362,39 +352,39 @@ def display_turns_left_and_ships_hit(turns_taken, shooter)
   elsif ships_sunk.size > 0 && shooter == :enemy
     print $alert_color + "Ships Sumk: " + ships_sunk.join(", ") + $text_color + "\n"
   end
-  puts "ships still alive: #{ships_still_alive} - turns taken (#{$turns_taken - 1})" if $debug == true
-  puts "Number of turns remaining for this round: #{ships_still_alive.size - $turns_taken - 1}"
+  puts "ships still alive: #{ships_still_alive} - turns taken (#{$board.turns - 1})" if $debug
+  puts "Number of turns remaining for this round: #{ships_still_alive.size - $board.turns - 1}"
 end
 
 def determine_ships_sunk(ships_still_alive)
-  $full_ship_names - ships_still_alive
+  $enemy.letters_and_ships.values - ships_still_alive
 end
 
 def fire_at_enemy
   clear_screen
   $enemy.display_perceived_board
-  display_turns_left_and_ships_hit($turns_taken, :home)
+  display_turns_left_and_ships_hit($board.turns, :home)
   puts ''
   puts ''
   puts "IT'S YOUR TURN!"
   puts 'Where do you want to fire? (e.g. F4)'
   puts ''
-  $shot = gets.chomp
+  shot = gets.chomp
   puts ''
-  if $shot == ""
+  if shot == ""
     fire_at_enemy
-  elsif ($shot[0].match(/[A-J]/) || $shot[0].match(/[a-j]/)) && ($shot[1..-1].match(/\b\d\b/) || $shot[1..-1].to_i == 10) # Check if input was valid
-    $shot = $shot[0].upcase + $shot[1..-1] # change lower-case letters to upper-case ($shot.upcase! doesn't work???..worked on that for like 20 minutes...)
-    take_shot(:home,$shot)
+  elsif (shot[0].match(/[A-J]/) || shot[0].match(/[a-j]/)) && (shot[1..-1].match(/\b\d\b/) || shot[1..-1].to_i == 10) # Check if input was valid
+    shot = shot[0].upcase + shot[1..-1] # change lower-case letters to upper-case (shot.upcase! doesn't work???..worked on that for like 20 minutes...)
+    take_shot(:home,shot)
   else
-    puts "#{$shot} is not a valid input!"
-    sleep(1.0) if $debug == false
+    puts "#{shot} is not a valid input!"
+    sleep(1.0) if !$debug
     fire_at_enemy
   end
 end
 
 def enemy_fires_back
-  display_turns_left_and_ships_hit($turns_taken, :enemy)
+  display_turns_left_and_ships_hit($board.turns, :enemy)
   take_shot(:enemy, smart_shot)
 end
 
@@ -406,8 +396,8 @@ def smart_shot
     coordinates = random_letter + random_number
   else #there are some shots cued up
     if $enemy.ship_hits.size == 2 #two hits for a single ship
-      puts "$enemy.ship_hits: " if $debug == true
-      puts $enemy.ship_hits if $debug == true
+      puts "$enemy.ship_hits: " if $debug
+      puts $enemy.ship_hits if $debug
       #find commonality between two shots
       if $enemy.ship_hits[0][0] == $enemy.ship_hits[1][0]
         #delete all coordinates from next_shot that don't match that letter
@@ -423,9 +413,9 @@ def smart_shot
           end
         end
       end
-      puts "$enemy.next_shots: " if $debug == true     
-      puts $enemy.next_shots if $debug == true     
-      sleep(2.0) if $debug == true      
+      puts "$enemy.next_shots: " if $debug     
+      puts $enemy.next_shots if $debug     
+      sleep(2.0) if $debug      
       $enemy.ship_hits.delete_at(0) #delete first ship_hits, so there are only a maximum of 2 at any time
     end
     coordinates = $enemy.next_shots.sample
@@ -447,11 +437,11 @@ def add_smart_shots_to_next_shots_array(row, column)
   surrounding_coordinates << coordinate_numbers_to_coordinate_string(row,(column-1)) if column != 1
   surrounding_coordinates.shuffle!
   surrounding_coordinates.each {|coordinate| $enemy.next_shots << coordinate} #$enemy.next_shots += surrounding_coordinates didn't work for some reason...
-  puts "surrounding coordinates: " if $debug == true
-  puts surrounding_coordinates if $debug == true
-  puts "enemy next shots: " if $debug == true
-  puts $enemy.next_shots if $debug == true
-  sleep (2.0) if $debug == true
+  #for debugging...
+  puts "surrounding coordinates: " if $debug
+  puts surrounding_coordinates if $debug
+  puts "enemy next shots: " if $debug
+  puts $enemy.next_shots if $debug
 end
 
 def coordinate_numbers_to_coordinate_string(row,column)
@@ -461,11 +451,16 @@ def coordinate_numbers_to_coordinate_string(row,column)
   return letter + number
 end
 
+def letters_to_numbers(letter)
+  letters = [""] + ("A".."J").to_a
+  letters.index(letter)
+end
+
 def take_shot(shooter,shot)
   if shooter == :enemy
-    sleep (1.0) if $debug == false
+    sleep (1.0) if !$debug
   else
-    puts "Firing at #{$shot}"
+    puts "Firing at #{shot}"
   end
   puts ''
   puts ''
@@ -476,12 +471,12 @@ def take_shot(shooter,shot)
   end
   puts ''
   puts ''
-  sleep(1.0) if $debug == false
+  sleep(1.0) if !$debug
   analyze_and_print_results(shooter,shot)
 end
 
 def analyze_and_print_results(shooter,shot)
-  row = $letters_as_numbers.index(shot[0])
+  row = letters_to_numbers(shot[0])
   column = shot[1..-1].to_i
   if shooter == :home
     secret_board = $enemy.board
@@ -526,7 +521,7 @@ def display_results(shooter, hit_or_miss, ship_letter=nil)
     elsif hit_or_miss == :hit
       puts $success_color + "GOOD HIT!!!" + $text_color #In the Color Green
     end
-    sleep(1.0) if $debug == false
+    sleep(1.0) if !$debug
   elsif shooter == :enemy
     $home.display_my_board
     if hit_or_miss == :miss
@@ -688,7 +683,7 @@ def print_sunk_ship_results(ship_name, shooter)
 end
 
 def letter_to_ship_conversion(letter)
-  $letters_and_ships[letter]
+  $enemy.letters_and_ships[letter]
 end
 
 def remaining_ships(shooter)
