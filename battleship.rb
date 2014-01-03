@@ -1,8 +1,9 @@
 # TO DO
-# adjust number of turns given to user
-# make the enemy boards the same, but only display empty spots for user
+# when user attacks, display number of ships hit and number of attempts left to go
+# make smart shooting from the computer
+# Allow for lower-case input (eg. "j5")
 
-$debug = true
+$debug = false
 
 class NewBoard
   attr_accessor :board, :perceived_board, :ships_location, :remaining_ships, :shots_taken, :next_shots, :ship_hits
@@ -16,12 +17,12 @@ class NewBoard
               [['C'] + Array.new(10,@empty)] + 
               [['D'] + Array.new(10,@empty)] + 
               [['E'] + Array.new(10,@empty)] + 
-              [['F'] + Array.new(10,@empty)] +  
+              [['F'] + Array.new(10,@empty)] + 
               [['G'] + Array.new(10,@empty)] + 
               [['H'] + Array.new(10,@empty)] + 
               [['I'] + Array.new(10,@empty)] + 
               [['J'] + Array.new(10,@empty)]
-    @perceived_board = [[''] + (1..10).to_a] + # @board.dub didn't work...
+    @perceived_board = [[''] + (1..10).to_a] + 
               [['A'] + Array.new(10,@empty)] + 
               [['B'] + Array.new(10,@empty)] + 
               [['C'] + Array.new(10,@empty)] + 
@@ -317,22 +318,62 @@ end
 # Game Loop
 
 def game_loop
+  $turns_taken = 0
   fire_at_enemy
-  has_more_turns(:enemy)
-  puts "\nNow it's the Computer's turn\n"
+  has_more_turns($enemy)
+  puts ''
+  puts "Now it's the Computer's turn"
+  puts ''
   prompt_return
   clear_screen
   $home.display_my_board
+  $turns_taken = 0
   enemy_fires_back
-  has_more_turns(:home)
+  has_more_turns($home)
   prompt_return(:start_new_round)
   game_loop #exit game loop through game_over at sink_ship or at remove_from_ships_location_array
+end
+
+def has_more_turns(board)
+  enemy_ships_still_alive = $enemy.ships_location.size - 1
+  if enemy_ships_still_alive > $turns_taken
+    puts ''
+    if board == $enemy
+      fire_at_enemy
+    elsif board == $home
+      puts "The Computer goes again..."
+      enemy_fires_back
+    end
+    $turns_taken += 1
+    has_more_turns(board)
+  end
+end
+
+def display_turns_left_and_ships_hit(turns_taken, shooter)
+  ships_still_alive = nil
+  if shooter == :home
+    ships_still_alive = $enemy.ships_location.keys
+  elsif shooter == :enemy
+    ships_still_alive = $home.ships_location.keys
+  end
+  ships_sunk = determine_ships_sunk(ships_still_alive)
+  if ships_sunk.size > 0 && shooter == :home
+    print $success_color + "Ships Sunk: " + ships_sunk.join(", ") + $text_color + "\n"
+  elsif ships_sunk.size > 0 && shooter == :enemy
+    print $alert_color + "Ships Sumk: " + ships_sunk.join(", ") + $text_color + "\n"
+  end
+  puts "ships still alive: #{ships_still_alive} - turns taken (#{$turns_taken - 1})" if $debug == true
+  puts "Number of turns remaining for this round: #{ships_still_alive.size - $turns_taken - 1}"
+end
+
+def determine_ships_sunk(ships_still_alive)
+  $full_ship_names - ships_still_alive
 end
 
 def fire_at_enemy
   clear_screen
   $enemy.display_perceived_board
-  display_turns_left_and_ships_hit(:home)
+  display_turns_left_and_ships_hit($turns_taken, :home)
   puts ''
   puts ''
   puts "IT'S YOUR TURN!"
@@ -352,43 +393,8 @@ def fire_at_enemy
   end
 end
 
-def has_more_turns(board)
-  puts ''
-  number_of_turns = nil # is there a more effecient way to write this (Declare variable as nil first)
-  if board == :home
-    number_of_turns = $enemy.ships_location.size - 1 # -1 to account for the turn already taken
-    number_of_turns.times {fire_at_enemy}
-  elsif board == :enemy
-    number_of_turns = $home.ships_location.size - 1 # -1 to account for the turn already taken
-    number_of_turns.times {enemy_fires_back}
-  end
-end
-
-def display_turns_left_and_ships_hit(shooter)
-  ships_still_alive = nil
-  if shooter == :home
-    ships_still_alive = $enemy.ships_location.keys
-  elsif shooter == :enemy
-    ships_still_alive = $home.ships_location.keys
-  end
-  ships_sunk = determine_ships_sunk(ships_still_alive)
-  puts "ships sunk: " if $debug == true
-  puts ships_sunk if $debug == true
-  if ships_sunk.size > 0 && shooter == :home
-    print $success_color + "Ships Sunk: " + ships_sunk.join(", ") + $text_color + "\n"
-  elsif ships_sunk.size > 0 && shooter == :enemy
-    print $alert_color + "Ships Sumk: " + ships_sunk.join(", ") + $text_color + "\n"
-  end
-  puts "ships still alive: #{ships_still_alive}" if $debug == true
-  # puts "Number of turns remaining for this round: #{ships_still_alive.size - $turns_taken - 1}"
-end
-
-def determine_ships_sunk(ships_still_alive)
-  $full_ship_names - ships_still_alive
-end
-
 def enemy_fires_back
-  display_turns_left_and_ships_hit(:enemy)
+  display_turns_left_and_ships_hit($turns_taken, :enemy)
   take_shot(:enemy, smart_shot)
 end
 
